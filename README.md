@@ -1,37 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wema Dashboard - Documentation
 
-## Getting Started
+## Overview
+The Wema Dashboard is a front-end project that focuses on converting a Figma design into a responsive web dashboard using modern web technologies. The app is designed to showcase data in an intuitive and user-friendly way, aligning with the visual elements from the provided Figma UI.
 
-First, run the development server:
+## Tech Stack
+- Frontend Framework: React.js
+- Styling: Styled component
+- Deployment: Netlify
+## Installation/Setup Instructions
+To run the dashboard locally, follow these steps:
+
+## Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [repository-link]
+cd wema-dashboard
 ```
+## Install dependencies:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+npm install
+```
+## Start the development server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+``` bash
+npm start
+```
+The dashboard will be available at http://localhost:3000.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# Wema
+## Key Features
+- Figma UI Conversion: The project is a direct conversion of the UI design provided in Figma, focusing on layout, typography, and color schemes to match the design specifications.
+- Responsive Layout: The dashboard is built to be responsive, adapting to different screen sizes and devices.
+## Known Issues/Limitations
+- Incomplete Functionality: The dashboard currently lacks full implementation of data fetching and dynamic content. The structure and layout are in place, but interactive features such as charts, tables, or user inputs are yet to be developed.
+## Future Enhancements
+- Data Integration: Plans to fetch and display real-time data from an API to populate the dashboard components.
+- Interactivity: Implementing user interaction features such as filtering, sorting, and updating data in the dashboard.
+- Charts and Graphs: Adding visual elements like charts and graphs to display data in a more meaningful way.
