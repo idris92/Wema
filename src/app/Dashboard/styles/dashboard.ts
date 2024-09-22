@@ -17,11 +17,12 @@ export const SideBar = styled(Body)`
   flex-direction: column;
 
 `
-export const SidebarContainer = styled.div`
-    width: 210px;
-    height: auto;
-    min-height: 100vh;
-    background: #990d81;
+export const SidebarContainer = styled.div<{$toggled:boolean}>`
+    display: grid;
+    @media  ${device.mobileL}{
+        display: ${props => props.$toggled ? 'grid' : 'none'};
+        width: ${props => props.$toggled ? 'auto' : 'none'};
+    }
 
 
 `
@@ -222,6 +223,7 @@ export const TopBarLangInput = styled.input`
   position: relative;
   font-size: 14px;
   font-weight: normal;
+
 
 
 `

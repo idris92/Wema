@@ -5,7 +5,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { GrSun } from "react-icons/gr";
 import { RxAvatar } from "react-icons/rx";
 import { IoMdNotifications } from "react-icons/io";
-import {Body, ContentBody, ContentWrapper, LangLi, LangOptionsWrapper, LangUl, ListWrapper, TopBarHamburger, TopBar, TopBarActions, TopBarLang, TopBarLangIcon, TopBarLangInput, TopBarMode, TopBarSearch, TopBarSearchContainer, TopBarSearchInput, TopBarTitle,} from './styles'
+import {Body, ContentBody, ContentWrapper, LangLi, LangOptionsWrapper, LangUl, ListWrapper, TopBarHamburger, TopBar, TopBarActions, TopBarLang, TopBarLangIcon, TopBarLangInput, TopBarMode, TopBarSearch, TopBarSearchContainer, TopBarSearchInput, TopBarTitle, SidebarContainer,} from './styles'
 import { LangOptions} from "@/utils";
 import { RxHamburgerMenu } from "react-icons/rx";
 import ProSideBar from "./Components/ProSideBar";
@@ -32,7 +32,9 @@ export default function DashboardWrapper({children, title}:InputProps) {
  
   return (
     <Body>
-      <ProSideBar toggled={toggled} setToggled={setToggled}/>
+        <SidebarContainer $toggled={toggled}>
+            <ProSideBar toggled={toggled} setToggled={setToggled}/>
+        </SidebarContainer>
       <ContentWrapper>  
             <TopBar>
                 <TopBarTitle>{title || 'Dashboard'}</TopBarTitle>
@@ -51,7 +53,7 @@ export default function DashboardWrapper({children, title}:InputProps) {
                         </TopBarHamburger>
                             
                       <TopBarLang>
-                            <TopBarLangInput placeholder={lang}></TopBarLangInput>
+                            <TopBarLangInput placeholder={lang} disabled></TopBarLangInput>
                             <TopBarLangIcon onClick={toggleMenu} >
                                 <IoIosArrowDown size='24px' color='rgb(211, 211, 211, 0.8)' cursor='pointer'/>
                             </TopBarLangIcon>

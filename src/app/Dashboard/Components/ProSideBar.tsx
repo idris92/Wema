@@ -33,8 +33,7 @@ export default function ProSideBar({toggled, setToggled}:InputProps) {
           },
           
       }} 
-      collapsedWidth={toggled? '210px': '0px'}
-      collapsed={!toggled}
+   
       
       >
         <SideBarHeader>
