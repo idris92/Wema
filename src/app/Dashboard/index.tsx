@@ -6,9 +6,9 @@ import { GrSun } from "react-icons/gr";
 import { RxAvatar } from "react-icons/rx";
 import { IoMdNotifications } from "react-icons/io";
 import {Body, ContentBody, ContentWrapper, LangLi, LangOptionsWrapper, LangUl, ListWrapper, TopBarHamburger, TopBar, TopBarActions, TopBarLang, TopBarLangIcon, TopBarLangInput, TopBarMode, TopBarSearch, TopBarSearchContainer, TopBarSearchInput, TopBarTitle,} from './styles'
-import SideBarWrapper from "./Components/SideBar";
 import { LangOptions} from "@/utils";
 import { RxHamburgerMenu } from "react-icons/rx";
+import ProSideBar from "./Components/ProSideBar";
 
 type InputProps = {
     children: any;
@@ -18,6 +18,7 @@ type InputProps = {
 export default function DashboardWrapper({children, title}:InputProps) {
   const [lang, setLang] = useState<string>('ENG')
   const [menuActive, setMenuActive] = useState(false);
+  const [toggled, setToggled] = useState(false);
 
   const toggleMenu=()=>{
     setMenuActive(!menuActive)
@@ -28,14 +29,14 @@ export default function DashboardWrapper({children, title}:InputProps) {
       setMenuActive(false)
   }
 
-  
+ 
   return (
     <Body>
-      <SideBarWrapper/>
+      <ProSideBar toggled={toggled} setToggled={setToggled}/>
       <ContentWrapper>  
             <TopBar>
                 <TopBarTitle>{title || 'Dashboard'}</TopBarTitle>
-                <TopBarHamburger>
+                <TopBarHamburger onClick={() => setToggled(!toggled)}>
                     <RxHamburgerMenu size='24px'/>
                 </TopBarHamburger>
                 <TopBarActions>

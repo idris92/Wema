@@ -4,10 +4,10 @@ import styled from "styled-components";
 export const Body= styled.div`
   display: flex;
   width: 100%;
-  min-height: 100vh;
+  max-height: 100vh;
   height: auto;
   background: #ffffff;
-  overflow: hidden;
+  overflow-y: auto;
 `
 
 export const SideBar = styled(Body)`
@@ -15,31 +15,46 @@ export const SideBar = styled(Body)`
   background: #990d81;
   padding: 8px 18px;
   flex-direction: column;
-  @media  ${device.mobileL}{
-        display: none;
-        width: 0px;
-    }
+
+`
+export const SidebarContainer = styled.div`
+    width: 210px;
+    height: auto;
+    min-height: 100vh;
+    background: #990d81;
+
 
 `
 export const ContentWrapper = styled(Body)`
-  width: 80%;
+  width: 100%;
   background: rgb(211, 211, 211, 0.2);
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  min-height: 100vh;
+  height: auto;
   @media  ${device.mobileL}{
         width: 100%;
     }
 `
 
 export const SideBarHeader= styled(SideBar)`
-    justify-content: center;
+    display: grid;
     align-items: center;
+    justify-items: center;
+    min-height: 18px;
+    height: 100px;
     width: 100%;
-    min-height: 15%;
     padding: 0px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     background: transparent;
+  
+`
+export const SideBarMenu = styled.div`
+    width: 100%;
+    max-height: 80%;
+    height: 80%;
+    padding-top: 16px;
 `
 
 
@@ -50,14 +65,15 @@ export const SideBarNavs = styled(SideBar)`
   padding: 32px 0px 12px;
   background: transparent;
   gap: 16px;
+
 `
 
 export const SideBarFooter = styled(SideBar)`
   flex-direction: column;
   width: 100%;
-  min-Height: 30%;
+  min-Height: 10%;
   padding: 0px;
-//   margin: 10px 0px;
+  padding-bottom: 10px;
   background: transparent;
 `
 
@@ -104,6 +120,7 @@ export const TopBar = styled.div`
   box-shadow: 0px 0px 11.8169px rgba(0, 0, 0, 0.02);
   padding: 8px 16px;
   justify-content: space-between;
+  z-index: sticky;
   align-items: center;
    @media  ${device.mobileL}{
         padding: 4px 8px;
@@ -123,8 +140,11 @@ export const TopBarTitle = styled.div`
         font-size: 21px;
     }
 `
-export const TopBarHamburger = styled.div`
+export const TopBarHamburger = styled.button`
         display: none;
+        cursor: pointer;
+        border:none;
+        background: transparent;
         @media  ${device.mobileL}{
             display: flex;
             justify-content: center;
@@ -274,8 +294,9 @@ export const TopBarMode = styled.div<{$background?: string}>`
 
 export const ContentBody = styled.div`
   background: transparent;
-  min-height: 100vh;
-  margin: 48px 16px;
+  height: auto;
+  padding: 48px 16px;
+    overflow-y: auto;
 `
 
 export const NavWrapper = styled.div<{ $color?: string;}>`
@@ -287,3 +308,43 @@ export const NavWrapper = styled.div<{ $color?: string;}>`
     justify-content: center;
     align-items: center;
 `
+
+
+export const ProfileWrapper = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px;
+    min-height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    gap: 8px;
+`
+export const Profile = styled.div`
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: rgba(255, 255, 255, 0.7);
+`
+
+export const ProfileInfoContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0px;
+`
+export const ProfileTitle = styled.p`
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0px;
+    color: #ffffff;
+
+`
+export const ProfileSubtitle = styled.p`
+    font-size: 12px;
+    font-weight: normal;
+    margin: 0px;
+    color: rgba(255, 255, 255, 0.7);
+`
+

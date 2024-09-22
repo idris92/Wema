@@ -1,37 +1,49 @@
 'use client'
 import { useState } from "react";
-import styled from "styled-components";
-import { SlReload } from "react-icons/sl";
-import { BsGraphDownArrow } from "react-icons/bs";
-import { BsGraphUpArrow } from "react-icons/bs";
 import { HomeStat, CardWrapper, HomeStatLeftCont, HomeStatIconBg, HomeStatRightCont, HomeStatInfoContainer, HomeStatTitle, HomeStatSubTitle, HomeStatRateContainer, HomeStatPer, HomeStatTime } from "../styles";
 
+type InputProps = {
+    bgColor: string;
+    color: string
+    bgIcon: JSX.Element;
+    title: string;
+    subtitle: string;
+    rateIcon: JSX.Element;
+    rate: string;
+    rateColor: string;
+    date: string;
+    index: number;
+  };
 
-
-export default function StatCard() {
+export default function StatCard({bgColor, color, bgIcon, title, subtitle, rateIcon, rate, rateColor, date, index}:InputProps) {
  
   return (
-    <HomeStat>
+    <HomeStat key={index}>
         <CardWrapper>
             <HomeStatLeftCont>
-                <HomeStatIconBg $background="#eaedf9" $color='#3d55d3'>
-                    <SlReload size='24px'/>
+                <HomeStatIconBg $background={bgColor} $color={color}>
+                    {
+                        bgIcon
+                    }
                 </HomeStatIconBg>
             </HomeStatLeftCont>
             <HomeStatRightCont>
                 <HomeStatInfoContainer>
-                    <HomeStatTitle>1478286</HomeStatTitle>
-                    <HomeStatSubTitle>Pending Requests</HomeStatSubTitle>
+                    <HomeStatTitle>{Number(title).toLocaleString('fr-FR')}</HomeStatTitle>
+                    <HomeStatSubTitle>{subtitle}</HomeStatSubTitle>
                 </HomeStatInfoContainer>
                 <HomeStatRateContainer>
                     <HomeStatRateContainer>
-                            <BsGraphUpArrow color='green' size='14px'/>
-                            <HomeStatPer>4.07%</HomeStatPer>
+                            {
+                                rateIcon
+                            }
+                            <HomeStatPer $color={rateColor}>{rate}</HomeStatPer>
                     </HomeStatRateContainer>
-                    <HomeStatTime>Last Month</HomeStatTime>
+                    <HomeStatTime>{date}</HomeStatTime>
                 </HomeStatRateContainer>
             </HomeStatRightCont>
         </CardWrapper>
     </HomeStat>
   );
 }
+
