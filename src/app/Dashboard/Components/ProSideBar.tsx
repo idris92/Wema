@@ -14,12 +14,12 @@ type InputProps = {
 
 }
 export default function ProSideBar({toggled, setToggled}:InputProps) {
-    const matches =()=> typeof window !== "undefined" && window.matchMedia('(max-width: 800px)').matches
+    const matches =()=> typeof window !== "undefined" && window.matchMedia('(max-width: 768px)').matches
     const [broken, setBroken] = useState(matches);
     const pathname = usePathname()
   return (
 
-    <Sidebar backgroundColor="#990d81" width="210px"  onBackdropClick={() => setToggled(false)} toggled={toggled} customBreakPoint="800px" onBreakPoint={setBroken} 
+    <Sidebar backgroundColor="#990d81" width="210px"  onBackdropClick={() => setToggled(false)} toggled={toggled} customBreakPoint="768px" breakPoint="always" 
         rootStyles={{
         [`.${menuClasses.label}`]: {
           color: '#ffffff',
