@@ -19,7 +19,7 @@ export default function ProSideBar({toggled, setToggled}:InputProps) {
     const pathname = usePathname()
   return (
 
-    <Sidebar backgroundColor="#990d81" width="210px"  onBackdropClick={() => setToggled(false)} toggled={toggled} customBreakPoint="768px" breakPoint="always" 
+    <Sidebar backgroundColor="#990d81" width="210px"  onBackdropClick={() => setToggled(false)} toggled={toggled} customBreakPoint="768px" breakPoint="md" 
         rootStyles={{
         [`.${menuClasses.label}`]: {
           color: '#ffffff',
