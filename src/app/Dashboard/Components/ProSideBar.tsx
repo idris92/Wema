@@ -19,7 +19,7 @@ export default function ProSideBar({toggled, setToggled}:InputProps) {
     const pathname = usePathname()
   return (
 
-    <Sidebar backgroundColor="#990d81" width="210px"  onBackdropClick={() => setToggled(false)} toggled={toggled} customBreakPoint="768px" breakPoint="md" 
+    <Sidebar backgroundColor="#990d81" width="210px"  onBeforeToggle={()=>setToggled(false)} onBackdropClick={() => setToggled(false)} toggled={toggled} customBreakPoint="768px" breakPoint="md" 
         rootStyles={{
         [`.${menuClasses.label}`]: {
           color: '#ffffff',
@@ -31,7 +31,12 @@ export default function ProSideBar({toggled, setToggled}:InputProps) {
             backgroundColor: 'rgba(255, 255, 255, 0.2) ',
             color: '#ffffff',
           },
-      }} >
+          
+      }} 
+      collapsedWidth={toggled? '210px': '0px'}
+      collapsed={!toggled}
+      
+      >
         <SideBarHeader>
                 <img src='https://wemabank.com/assets/wemaFullWhite-Xh_jya1z.svg' alt="Wema logo"/>
           </SideBarHeader>
