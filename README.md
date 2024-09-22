@@ -32,8 +32,7 @@ The dashboard will be available at http://localhost:3000.
 - Figma UI Conversion: The project is a direct conversion of the UI design provided in Figma, focusing on layout, typography, and color schemes to match the design specifications.
 - Responsive Layout: The dashboard is built to be responsive, adapting to different screen sizes and devices.
 ## Known Issues/Limitations
-- Incomplete Functionality: The dashboard currently lacks full implementation of data fetching and dynamic content. The structure and layout are in place, but interactive features such as charts, tables, or user inputs are yet to be developed.
+- Incomplete Functionality: The dashboard currently lacks full implementation of data fetching and dynamic content. The structure and layout are in place.
 ## Future Enhancements
 - Data Integration: Plans to fetch and display real-time data from an API to populate the dashboard components.
 - Interactivity: Implementing user interaction features such as filtering, sorting, and updating data in the dashboard.
-- Charts and Graphs: Adding visual elements like charts and graphs to display data in a more meaningful way.
