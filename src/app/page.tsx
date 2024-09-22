@@ -19,7 +19,7 @@ export default function Home() {
                   <HomeStatContainer>
                     {
                       statCardData.map((value, index)=>(
-                        <StatCard bgColor={value?.bgColor} color={value?.color} bgIcon={value?.bgIcon} title={value?.title} subtitle={value?.subtitle} rateIcon={value?.rateIcon} rate={value?.rate} date={value?.date} index={index} rateColor={value?.rateColor}/>
+                        <StatCard key={index} bgColor={value?.bgColor} color={value?.color} bgIcon={value?.bgIcon} title={value?.title} subtitle={value?.subtitle} rateIcon={value?.rateIcon} rate={value?.rate} date={value?.date} rateColor={value?.rateColor}/>
                       ))
                     }
                 
@@ -74,7 +74,7 @@ export default function Home() {
                             </RequestHeader>
                             {
                               Requests.map((value, index)=>(
-                                <Request name={value?.name} email={value?.email} requestType={value?.type} status={value?.status} date={value?.date} index={index}/>
+                                <Request key={index} name={value?.name} email={value?.email} requestType={value?.type} status={value?.status} date={value?.date} index={index}/>
                               ))
                             }
                             

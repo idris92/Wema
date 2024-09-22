@@ -12,13 +12,12 @@ type InputProps = {
     rate: string;
     rateColor: string;
     date: string;
-    index: number;
   };
 
-export default function StatCard({bgColor, color, bgIcon, title, subtitle, rateIcon, rate, rateColor, date, index}:InputProps) {
+export default function StatCard({bgColor, color, bgIcon, title, subtitle, rateIcon, rate, rateColor, date}:InputProps) {
  
   return (
-    <HomeStat key={index}>
+    <HomeStat>
         <CardWrapper>
             <HomeStatLeftCont>
                 <HomeStatIconBg $background={bgColor} $color={color}>

@@ -14,9 +14,9 @@ type InputProps = {
 
 }
 export default function ProSideBar({toggled, setToggled}:InputProps) {
-    const [broken, setBroken] = useState(window.matchMedia('(max-width: 800px)').matches);
+    const matches =()=> typeof window !== "undefined" && window.matchMedia('(max-width: 800px)').matches
+    const [broken, setBroken] = useState(matches);
     const pathname = usePathname()
-    console.log(pathname)
   return (
 
     <Sidebar backgroundColor="#990d81" width="210px"  onBackdropClick={() => setToggled(false)} toggled={toggled} customBreakPoint="800px" onBreakPoint={setBroken} 
