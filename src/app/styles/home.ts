@@ -283,7 +283,7 @@ export const RequestHeader = styled.div`
     grid-gap: 4px;
     justify-items:left;
     padding: 16px;
-    border-bottom: 1px solid #F5F5F5
+    border-bottom: 1px solid #F5F5F5;
 
 `
 export const RequestHeading = styled.p`
